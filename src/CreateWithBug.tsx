@@ -1,9 +1,14 @@
-import { ArrayInput, Create, CreateProps, SimpleForm, SimpleFormIterator, TextInput } from 'react-admin';
+import {
+  ArrayInput,
+  Create,
+  SimpleForm,
+  SimpleFormIterator,
+  TextInput,
+} from "react-admin";
 
-
-function CreateWithBug(props: CreateProps) {
+function CreateWithBug() {
   return (
-    <Create {...props}>
+    <Create>
       <SimpleForm>
         <TextInput
           source="default"
@@ -12,12 +17,12 @@ function CreateWithBug(props: CreateProps) {
         />
         <ArrayInput source="array_input">
           <SimpleFormIterator>
-            <TextInput source='text_input' />
+            <TextInput source="text_input" />
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>
     </Create>
-  )
+  );
 }
 
 export default CreateWithBug;
